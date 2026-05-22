@@ -1,12 +1,12 @@
 import { closeCompletion } from '@codemirror/autocomplete';
-import { ViewPlugin, type EditorView, type PluginValue } from '@codemirror/view';
+import { ViewPlugin, type EditorView } from '@codemirror/view';
 
 import { closeCursorInfoBox } from './InfoBoxTooltip';
 
 export const COMMAND_BAR_OPEN_EVENT = 'n8n:command-bar:open';
 
 export const closeTooltipsOnCommandBarOpen = ViewPlugin.fromClass(
-	class implements PluginValue {
+	class {
 		private readonly listener: () => void;
 
 		constructor(view: EditorView) {
